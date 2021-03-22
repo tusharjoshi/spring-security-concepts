@@ -30,7 +30,7 @@ public class BookAdminController {
 
     @PostMapping
     @PreAuthorize("hasAuthority('book:write')")
-    public void addBook(Book book) {
+    public void addBook(@RequestBody Book book) {
         System.out.println("Added Book " + book.getBookName());
     }
 

@@ -55,21 +55,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails rajUser = User.builder()
                 .username("raj")
                 .password(passwordEncoder.encode("password"))
-//                .roles(MEMBER.name())
                 .authorities(MEMBER.getGrantedAuthorities())
                 .build();
 
         UserDetails rishiUser = User.builder()
                 .username("rishi")
                 .password(passwordEncoder.encode("password"))
-//                .roles(ADMIN.name())
                 .authorities(ADMIN.getGrantedAuthorities())
                 .build();
 
         UserDetails ranbirUser = User.builder()
                 .username("ranbir")
                 .password(passwordEncoder.encode("password"))
-//                .roles(ADMIN_SUB_CON.name())
                 .authorities(ADMIN_SUB_CON.getGrantedAuthorities())
                 .build();
 

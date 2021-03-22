@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails rajUser = User.builder()
                 .username("raj")
                 .password(passwordEncoder.encode("password"))
-                .roles(MEMBER.name())
+                .roles(MEMBER.name()) // ROLE_MEMBER
                 .build();
 
         UserDetails rishiUser = User.builder()
