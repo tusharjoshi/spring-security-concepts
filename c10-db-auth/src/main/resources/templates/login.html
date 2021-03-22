@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Log In</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>Please Log In</h1>
+    <form method="post" th:action="@{/login}">
+        <div th:if="${param.error}" role="alert">Invalid username and password.</div>
+        <div th:if="${param.logout}" role="alert">You have been logged out.</div>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username" required autofocus>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </p>
+        <p>
+            <label for="remember-me">Remember me?</label>
+            <input type="checkbox" id="remember-me" name="remember-me">
+        </p>
+        <button name="submit" type="submit">Sign In</button>
+    </form>
+</div>
+</body>
+</html>
